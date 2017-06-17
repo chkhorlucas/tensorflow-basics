@@ -120,5 +120,5 @@ Run below commands and you will see currently there is nothing in the graph now.
 $ tensorboard --logdir=log_simple_graph
 ```
 
-15. Go to [localhost](localhost:6006) to view our graph.
+15. Go to localhost:6006 to view our graph.
 
