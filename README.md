@@ -1,12 +1,11 @@
-# Basics of Tensorflow (Part I)
+# Basics of Tensorflow
 ## Official guide
 * [Getting Started with Tensorflow](https://www.tensorflow.org/get_started/get_started)
-## 0. Prerequisites  
+## Prerequisites  
 * [Install Python](https://www.python.org/downloads/) (doesn't matter 2.7 or 3.n)  
-
 * [Install Tensorflow](https://www.tensorflow.org/install/)   
 
-## 1. Getting started
+## Getting Started (Part I)
 1. Open Python in terminal.
 ```
 $ python
@@ -124,5 +123,76 @@ $ tensorboard --logdir=log_simple_graph
 
 15. Go to localhost:6006 to view our graph.
 
-## 2. Conclusion
+## 2. Conclusion (Part I)
 We have perform a basic math function using Tensorflow. Reason we use such a lengthy method to do a multiplication, is to understand the concepts of the Tensorflow framework before even hands on the neural networks.
+
+## 3. Getting Started (Parted II)
+1. Launch Python in terminal and import Tensorflow.
+```
+>>> Import tensorflow as tf
+```
+
+2. Define the **input**, **output** & **weight**.
+```
+>>> x = tf.constant(1.0, name='input')
+>>> w = tf.Variable(0.8, name='weight')
+>>> y = tf.multiply(w, x, name='output')
+```
+
+3. The combination of **xyz** we can understand it as a single neuron:
+![Image of Bobby](https://github.com/chkhorlucas/tensorflow-basics/images/bobbytheneuron.png)
+
+4. Define **target label**.
+```
+y_ = tf.constant(7.5)
+```
+
+4. Define **loss**.
+```
+loss = tf.pow(y - y_, 2, name='loss')
+```
+
+5. Optimizer
+```
+>>> optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.025)
+>>> grads_and_vars = optimizer.compute_gradients(loss)
+>>> sess.run(tf.global_variables_initializer())
+>>> sess.run(grads_and_vars[1][0])
+```
+
+6. Backpropagation
+```
+>>> sess.run(optim.apply_gradients(grads_and_vars))
+>>> sess.run(w)
+```
+
+7. Training step
+```
+>>> train_step = tf.train.GradientDescentOptimizer(0.025).minimize(loss)
+>>> for i in range(100):
+... 	sess.run(train_step)
+...
+>>> sess.run(y)
+```
+
+8. Print result for every training steps
+```
+>>> sess.run(tf.global_variables_initializer())
+>>> for i in range(100):
+... 	print('before step {}, y is {}'.format(i, sess.run(y)))
+... 	sess.run(train_step)
+...
+```
+
+9. Plot graph
+```
+>>> summary_y = tf.summary.scalar('output', y)
+>>> summary_writer = tf.summary.FileWriter('log_simple_stats')
+>>> sess.run(tf.global_variables_initializer())
+>>> for i in range(100):
+... 	summary_str = sess.run(summary_y)
+... 	summary_writer.add_summary(summary_str, i)
+... 	sess.run(train_step)
+...
+$ tensorboard --logdir=log_simple_stats
+```
