@@ -1,4 +1,6 @@
-# Basics of Tensorflow  
+# Basics of Tensorflow
+## Official guide
+* [Getting Started with Tensorflow](https://www.tensorflow.org/get_started/get_started)
 ## 0. Prerequisites  
 * [Install Python](https://www.python.org/downloads/) (doesn't matter 2.7 or 3.n)  
 
