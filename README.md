@@ -1,4 +1,4 @@
-# Basics of Tensorflow
+# Basics of Tensorflow (Part I)
 ## Official guide
 * [Getting Started with Tensorflow](https://www.tensorflow.org/get_started/get_started)
 ## 0. Prerequisites  
@@ -6,7 +6,7 @@
 
 * [Install Tensorflow](https://www.tensorflow.org/install/)   
 
-## 1. Getting started 
+## 1. Getting started
 1. Open Python in terminal.
 ```
 $ python
@@ -124,3 +124,4 @@ $ tensorboard --logdir=log_simple_graph
 
 15. Go to localhost:6006 to view our graph.
 
+**Conclusion:** We have perform a basic math function using Tensorflow. Reason we use such a lengthy method to do a multiplication, is to understand the concepts of the Tensorflow framework before even hands on the neural networks.
