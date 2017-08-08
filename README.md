@@ -140,7 +140,7 @@ We have perform a basic math function using Tensorflow. Reason we use such a len
 ```
 
 3. The combination of **xyz** we can understand it as a single neuron:
-![Image of Bobby](https://github.com/chkhorlucas/tensorflow-basics/images/bobbytheneuron.png)
+![Image of Bobby](images/bobbytheneuron.png)
 
 4. Define **target label**.
 ```
