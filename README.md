@@ -124,4 +124,5 @@ $ tensorboard --logdir=log_simple_graph
 
 15. Go to localhost:6006 to view our graph.
 
-**Conclusion:** We have perform a basic math function using Tensorflow. Reason we use such a lengthy method to do a multiplication, is to understand the concepts of the Tensorflow framework before even hands on the neural networks.
+## 2. Conclusion
+We have perform a basic math function using Tensorflow. Reason we use such a lengthy method to do a multiplication, is to understand the concepts of the Tensorflow framework before even hands on the neural networks.
